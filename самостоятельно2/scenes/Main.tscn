@@ -1,0 +1,254 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Srbija Sans.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Questions.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 52
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 42
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 37
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 33
+font_data = ExtResource( 1 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.673
+margin_bottom = -397.8
+theme = SubResource( 12 )
+script = ExtResource( 2 )
+
+[node name="Admin_menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Admin_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.227451, 0.219608, 0.219608, 1 )
+
+[node name="Label" type="Label" parent="Admin_menu"]
+anchor_left = 0.345
+anchor_top = 0.033
+anchor_right = 0.654
+anchor_bottom = 0.12
+margin_left = -0.280029
+margin_top = 0.00200081
+margin_right = 0.303955
+margin_bottom = 0.279999
+custom_fonts/font = SubResource( 13 )
+text = "Admin menu"
+align = 1
+
+[node name="LineEdit" type="LineEdit" parent="Admin_menu"]
+anchor_left = 0.188
+anchor_top = 0.163
+anchor_right = 0.795
+anchor_bottom = 0.305
+margin_left = 7.48799
+margin_top = -3.778
+margin_right = 6.91998
+margin_bottom = 0.169998
+rect_min_size = Vector2( 250, 50 )
+placeholder_text = "Question:"
+placeholder_alpha = 0.444
+
+[node name="LineEdit2" type="LineEdit" parent="Admin_menu"]
+anchor_left = 0.132
+anchor_top = 0.38
+anchor_right = 0.896
+anchor_bottom = 0.591
+margin_left = -0.167999
+margin_top = -0.280014
+margin_right = 0.495972
+margin_bottom = -0.146027
+rect_min_size = Vector2( 250, 50 )
+placeholder_text = "Answers:"
+placeholder_alpha = 0.444
+
+[node name="Button" type="Button" parent="Admin_menu"]
+anchor_left = 0.604
+anchor_top = 0.693
+anchor_right = 0.916
+anchor_bottom = 0.833
+margin_left = -0.496033
+margin_top = 0.0419922
+margin_right = 0.0159302
+margin_bottom = 0.201965
+rect_min_size = Vector2( 320, 85 )
+custom_fonts/font = SubResource( 14 )
+text = "Create"
+
+[node name="Button2" type="Button" parent="Admin_menu"]
+anchor_left = 0.149
+anchor_top = 0.693
+anchor_right = 0.462
+anchor_bottom = 0.833
+margin_left = 0.423996
+margin_top = 0.0419922
+margin_right = -0.0880127
+margin_bottom = 0.201965
+custom_fonts/font = SubResource( 14 )
+text = "Add answer"
+
+[node name="Questions" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Questions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -398.0
+color = Color( 0.2, 0.176471, 0.176471, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="Questions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 625.0
+margin_right = 1.0
+color = Color( 0.246094, 0.222061, 0.222061, 1 )
+
+[node name="user_name" type="Control" parent="Questions"]
+anchor_right = 0.999
+anchor_bottom = 0.198
+margin_right = 0.0239258
+margin_bottom = 0.199989
+
+[node name="Label" type="Label" parent="Questions/user_name"]
+anchor_left = 0.626
+anchor_top = 0.116
+anchor_right = 0.979
+anchor_bottom = 0.549
+margin_left = -0.39801
+margin_top = 0.0581932
+margin_right = 0.483032
+margin_bottom = 0.0167923
+custom_fonts/font = SubResource( 8 )
+text = "What is your name?"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Questions/user_name"]
+anchor_left = 0.674
+anchor_top = 0.657
+anchor_right = 0.927
+anchor_bottom = 1.09
+margin_left = 0.497986
+margin_top = 0.0364914
+margin_right = -0.320984
+margin_bottom = -0.00491333
+custom_fonts/font = SubResource( 8 )
+text = "my name is.."
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="Questions/user_name"]
+anchor_left = 0.679
+anchor_top = 1.281
+anchor_right = 0.925
+anchor_bottom = 1.639
+margin_left = 0.382996
+margin_top = 0.0391846
+margin_right = -0.275024
+margin_bottom = 0.0118866
+custom_fonts/font = SubResource( 9 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Questions"]
+anchor_top = 0.211
+anchor_right = 0.607
+anchor_bottom = 0.886
+margin_left = 29.0
+margin_top = -111.866
+margin_right = 0.432007
+margin_bottom = 0.0839844
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Questions/ScrollContainer"]
+margin_right = 580.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 580, 600 )
+custom_constants/separation = 20
+
+[node name="Question" parent="Questions/ScrollContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_right = 580.0
+margin_bottom = 200.0
+Question = "Кто ты из майнкрафта?"
+Answers = [ "Эндермен", "Зомби", "Скелет" ]
+
+[node name="Question2" parent="Questions/ScrollContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 220.0
+margin_right = 580.0
+margin_bottom = 420.0
+Question = "Какой твой уровень игры в майнкрафт?"
+Answers = [ "Нуб", "Про", "Бог", "Хакер" ]
+
+[node name="Question3" parent="Questions/ScrollContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 440.0
+margin_right = 580.0
+margin_bottom = 640.0
+Question = "Какое твоё любимое оружие из майнкрафта?"
+Answers = [ "Меч", "Лук", "Трезубец", "Топор" ]
+
+[node name="Question4" parent="Questions/ScrollContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 660.0
+margin_right = 580.0
+margin_bottom = 860.0
+Question = "На чём ты играешь в игры?"
+Answers = [ "Телефон", "Планшет", "ПК", "Консоль", "Ноутбук" ]
+
+[node name="Question5" parent="Questions/ScrollContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 880.0
+margin_right = 580.0
+margin_bottom = 1080.0
+Question = "Каоке твоё люимое животное?"
+Answers = [ "Лиса", "Собака", "Котик", "Хомяк", "Панда", "Крыса" ]
+
+[node name="res" type="Button" parent="Questions"]
+anchor_left = 0.655
+anchor_top = 0.899
+anchor_right = 0.944
+anchor_bottom = 0.977
+margin_left = 0.279968
+margin_top = 0.205994
+margin_right = 0.343933
+margin_bottom = -0.0620117
+custom_fonts/font = SubResource( 10 )
+text = "Результат"
+
+[connection signal="text_entered" from="Questions/user_name/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="Questions/res" to="." method="_on_res_pressed"]
